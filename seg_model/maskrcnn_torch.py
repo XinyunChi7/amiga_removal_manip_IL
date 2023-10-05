@@ -102,7 +102,7 @@ def get_instance_segmentation_model(num_classes):
 def get_transform(train):
     transforms = []
     # converts image to Tensor!
-    transforms.append(T.ToTensor())
+    transforms.append(T.PILToTensor())
     if train:
         transforms.append(T.RandomHorizontalFlip(0.5))
     return T.Compose(transforms)
